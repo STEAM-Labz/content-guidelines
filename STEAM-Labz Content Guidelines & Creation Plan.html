@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAM-Labz Content Guidelines & Creation Plan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary-blue: #1a5b8e;
+            --secondary-blue: #007d8c;
+            --accent-orange: #ff6b35;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .section-title {
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 1rem;
+        }
+        
+        .toc-item {
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item:hover {
+            border-left: 2px solid var(--accent-orange);
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .toc-item.active {
+            border-left: 2px solid var(--accent-orange);
+            background-color: rgba(255, 107, 53, 0.1);
+        }
+        
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .table-row:nth-child(even) {
+            background-color: rgba(245, 245, 245, 0.5);
+        }
+        
+        .checklist-item {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .checklist-item:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+        }
+        
+         {
+            @page {
+                size: auto;
+                margin: 20mm;
+            }
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <header class="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10 px-8">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold mb-4">STEAM-Labz Content Guidelines</h1>
+            <p class="text-xl opacity-90">Comprehensive guide for creating, managing, and optimizing content across the STEAM-Labz ecosystem</p>
+        </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-8 py-12">
+        <div class="flex flex-col md:flex-row gap-10">
+            <!-- Table of Contents -->
+            <div class="md:w-1/4">
+                <div class="sticky top-8">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">Contents</h2>
+                    <ul class="space-y-1">
+                        <li class="toc-item pl-3 py-1"><a href="#introduction" class="hover:text-blue-700 block">Introduction</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#editorial-style" class="hover:text-blue-700 block">1. Editorial Style Guide</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#content-formats" class="hover:text-blue-700 block">2. Content Formats</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#workflows" class="hover:text-blue-700 block">3. Content Creation Workflows</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#templates" class="hover:text-blue-700 block">4. Documentation Templates</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#seo" class="hover:text-blue-700 block">5. SEO Best Practices</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#calendar" class="hover:text-blue-700 block">6. Content Calendar</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#community" class="hover:text-blue-700 block">7. Community Contribution</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#moderation" class="hover:text-blue-700 block">8. Content Moderation</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#media" class="hover:text-blue-700 block">9. Media Guidelines</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#accessibility" class="hover:text-blue-700 block">10. Accessibility Requirements</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#repurposing" class="hover:text-blue-700 block">11. Content Repurposing</a></li>
+                        <li class="toc-item pl-3 py-1"><a href="#metrics" class="hover:text-blue-700 block">12. Performance Metrics</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="md:w-3/4">
+                <section id="introduction" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">Introduction</h2>
+                    <p class="mb-4">Welcome to the STEAM-Labz Content Guidelines and Creation Plan. This comprehensive document serves as the central reference for all content creation activities across the STEAM-Labz ecosystem. Whether you're a staff member, educator, community contributor, or partner, these guidelines will help ensure consistency, quality, and accessibility in all published content.</p>
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 my-6">
+                        <h3 class="text-lg font-semibold mb-2 text-blue-800">About STEAM-Labz</h3>
+                        <p class="mb-2">STEAM-Labz is a non-profit initiative dedicated to providing accessible education in Science, Technology, Engineering, Arts, and Mathematics. Our platform serves creators, makers, educators, and learners by fostering knowledge sharing and community collaboration.</p>
+                        <p>The content we create and host plays a critical role in fulfilling our mission of lowering barriers to STEAM education and fostering innovation through community-driven learning.</p>
+                    </div>
+                </section>
+
+                <section id="editorial-style" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">1. Editorial Style Guide</h2>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">Voice & Tone</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="card bg-white p-5 border border-gray-200">
+                            <h4 class="text-lg font-medium mb-3 text-blue-600">Voice Attributes</h4>
+                            <ul class="space-y-2">
+                                <li class="checklist-item">Knowledgeable but accessible</li>
+                                <li class="checklist-item">Enthusiastic and encouraging</li>
+                                <li class="checklist-item">Inclusive and supportive</li>
+                                <li class="checklist-item">Clear and concise</li>
+                                <li class="checklist-item">Authentic and transparent</li>
+                            </ul>
+                        </div>
+                        <div class="card bg-white p-5 border border-gray-200">
+                            <h4 class="text-lg font-medium mb-3 text-blue-600">Tone Considerations</h4>
+                            <ul class="space-y-2">
+                                <li><strong>Tutorials & Documentation:</strong> Clear, instructional, patient</li>
+                                <li><strong>Community Forums:</strong> Conversational, helpful, collaborative</li>
+                                <li><strong>Project Showcases:</strong> Celebratory, curious, inspiring</li>
+                                <li><strong>Educational Content:</strong> Thoughtful, engaging, exploratory</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">Terminology Standards</h3>
+                    <div class="overflow-x-auto mb-8">
+                        <table class="min-w-full bg-white border border-gray-200">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="py-3 px-4 text-left font-semibold border-b">Term</th>
+                                    <th class="py-3 px-4 text-left font-semibold border-b">Usage</th>
+                                    <th class="py-3 px-4 text-left font-semibold border-b">Examples</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-row">
+                                    <td class="py-3 px-4 border-b">STEAM-Labz</td>
+                                    <td class="py-3 px-4 border-b">Always hyphenated with capital "S", "L"</td>
+                                    <td class="py-3 px-4 border-b">"Join STEAM-Labz today" (not "Steam-Labs" or "STEAM Labs")</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="py-3 px-4 border-b">STEAM</td>
+                                    <td class="py-3 px-4 border-b">All caps, no periods</td>
+                                    <td class="py-3 px-4 border-b">"STEAM education" (not "S.T.E.A.M." or "Steam")</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="py-3 px-4 border-b">Stream-Labz</td>
+                                    <td class="py-3 px-4 border-b">Hyphenated with capital "S", "L" when referring to video platform</td>
+                                    <td class="py-3 px-4 border-b">"Watch the tutorial on Stream-Labz"</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="py-3 px-4 border-b">Community member</td>
+                                    <td class="py-3 px-4 border-b">Preferred over "user" or "subscriber"</td>
+                                    <td class="py-3 px-4 border-b">"Community members can submit projects"</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="py-3 px-4 border-b">Project</td>
+                                    <td class="py-3 px-4 border-b">Use for all community-created builds and experiments</td>
+                                    <td class="py-3 px-4 border-b">"Featured projects" (not "featured builds" or "featured works")</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">Writing Style Guidelines</h3>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Use active voice</h4>
+                                <p class="text-gray-600">Prefer "Connect the wires to the board" over "The wires should be connected to the board."</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Write in second person</h4>
+                                <p class="text-gray-600">Address the reader directly: "You can adjust the settings" rather than "Users can adjust the settings."</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Keep paragraphs concise</h4>
+                                <p class="text-gray-600">Aim for 2-4 sentences per paragraph in educational content.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Use inclusive language</h4>
+                                <p class="text-gray-600">Avoid gendered terms and examples that may exclude certain groups.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-5 rounded-lg border-l-4 border-yellow-400">
+                        <h4 class="font-semibold text-gray-800 mb-2">Technical Terms</h4>
+                        <p class="text-gray-700">When introducing technical concepts, briefly define them on first use. For example: "We'll use pulse-width modulation (PWM), a technique for controlling power delivery to components."</p>
+                    </div>
+                </section>
+
+                <section id="content-formats" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">2. Content Formats</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="card p-6 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Project Documentation</h3>
+                            <p class="mb-4">Projects are the core content type of STEAM-Labz, showcasing community creations and innovations.</p>
+                            
+                            <h4 class="text-lg font-medium mb-3 text-blue-600">Required Elements:</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-blue-500"></i>
+                                    <span>Descriptive title</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-blue-500"></i>
+                                    <span>Cover image/thumbnail</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-blue-500"></i>
+                                    <span>Materials/components list</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-blue-500"></i>
+                                    <span>Step-by-step instructions</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-blue-500"></i>
+                                    <span>Category tags (Science, Technology, etc.)</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-blue-500"></i>
+                                    <span>Difficulty level indicator</span>
+                                </li>
+                            </ul>
+                            
+                            <h4 class="text-lg font-medium mb-3 text-blue-600">Recommended Elements:</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-green-500"></i>
+                                    <span>Troubleshooting section</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-green-500"></i>
+                                    <span>Video demonstration</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-green-500"></i>
+                                    <span>Source code (if applicable)</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-green-500"></i>
+                                    <span>Circuit diagrams/schematics</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-green-500"></i>
+                                    <span>Future expansion ideas</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-circle text-xs text-green-500"></i>
+                                    <span>Educational context/applications</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card p-6 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Educational Courses</h3>
+                            <p class="mb-4">Courses provide structured learning experiences on STEAM topics.</p>
+                            
+                            <h4 class="text-lg font-medium mb-3 text-blue-600">Structure Requirements:</h4>
+                            <ul class="space-y-3 mb-4">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <div>
+                                        <span class="font-medium">Course Overview</span>
+                                        <p class="text-sm text-gray-600">Introduction, learning objectives, prerequisites, and estimated completion time</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <div>
+                                        <span class="font-medium">Modular Lessons</span>
+                                        <p class="text-sm text-gray-600">15-30 minute self-contained lessons with clear objectives</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <div>
+                                        <span class="font-medium">Practical Exercises</span>
+                                        <p class="text-sm text-gray-600">Hands-on activities to reinforce concepts</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <div>
+                                        <span class="font-medium">Knowledge Checks</span>
+                                        <p class="text-sm text-gray-600">Quizzes or exercises to validate understanding</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                    <div>
+                                        <span class="font-medium">Resources & References</span>
+                                        <p class="text-sm text-gray-600">Additional materials for further learning</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="text-lg font-medium mb-2 text-blue-600">Course Types</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="p-3 bg-white rounded border border-blue-100">
+                                        <h5 class="font-medium text-blue-800 mb-1">Beginner Fundamentals</h5>
+                                        <p class="text-sm">Introductory concepts requiring minimal prior knowledge</p>
+                                    </div>
+                                    <div class="p-3 bg-white rounded border border-blue-100">
+                                        <h5 class="font-medium text-blue-800 mb-1">Skill Development</h5>
+                                        <p class="text-sm">Focused on building specific competencies</p>
+                                    </div>
+                                    <div class="p-3 bg-white rounded border border-blue-100">
+                                        <h5 class="font-medium text-blue-800 mb-1">Advanced Techniques</h5>
+                                        <p class="text-sm">Complex topics for experienced learners</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-6 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Stream-Labz Video Content</h3>
+                            <p class="mb-4">Video content hosted on our Stream-Labz platform using Cloudflare Stream.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                <div>
+                                    <h4 class="text-lg font-medium mb-3 text-blue-600">Video Formats</h4>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center space-x-2">
+                                            <i class="fas fa-video text-blue-500"></i>
+                                            <span><strong>Tutorials:</strong> 5-15 minute focused instruction</span>
+                                        </li>
+                                        <li class="flex items-center space-x-2">
+                                            <i class="fas fa-video text-blue-500"></i>
+                                            <span><strong>Project Showcases:</strong> 3-7 minute demonstrations</span>
+                                        </li>
+                                        <li class="flex items-center space-x-2">
+                                            <i class="fas fa-video text-blue-500"></i>
+                                            <span><strong>Lectures:</strong> 15-45 minute in-depth content</span>
+                                        </li>
+                                        <li class="flex items-center space-x-2">
+                                            <i class="fas fa-video text-blue-500"></i>
+                                            <span><strong>Livestreams:</strong> Interactive sessions, typically 30-90 minutes</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium mb-3 text-blue-600">Required Metadata</h4>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-start space-x-2">
+                                            <i class="fas fa-tag text-blue-500 mt-1"></i>
+                                            <div>
+                                                <span class="font-medium">Title</span>
+                                                <p class="text-sm text-gray-600">Clear, descriptive, and keyword-rich</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <i class="fas fa-tag text-blue-500 mt-1"></i>
+                                            <div>
+                                                <span class="font-medium">Description</span>
+                                                <p class="text-sm text-gray-600">Overview with timestamps for longer videos</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <i class="fas fa-tag text-blue-500 mt-1"></i>
+                                            <div>
+                                                <span class="font-medium">Tags</span>
+                                                <p class="text-sm text-gray-600">STEAM discipline, topic, difficulty level</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <i class="fas fa-tag text-blue-500 mt-1"></i>
+                                            <div>
+                                                <span class="font-medium">Thumbnail</span>
+                                                <p class="text-sm text-gray-600">16:9 ratio with text overlay</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+                                <h4 class="font-medium mb-2 text-orange-700">Video Quality Standards</h4>
+                                <ul class="space-y-1 text-sm">
+                                    <li>Minimum resolution: 1080p (1920x1080)</li>
+                                    <li>Audio: Clear narration with minimal background noise</li>
+                                    <li>Lighting: Well-lit subject with minimal shadows</li>
+                                    <li>Pacing: Deliberate movements with appropriate pauses</li>
+                                    <li>Branding: Include STEAM-Labz intro (5-10 seconds) and outro</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-6 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Community Forum Posts</h3>
+                            <p class="mb-4">Forum content helps build community engagement and knowledge sharing.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-lg font-medium mb-3 text-blue-600">Post Categories</h4>
+                                    <div class="space-y-3">
+                                        <div class="p-3 bg-gray-50 rounded">
+                                            <span class="font-medium text-blue-800">Questions</span>
+                                            <p class="text-sm text-gray-600">Technical queries seeking specific answers</p>
+                                        </div>
+                                        <div class="p-3 bg-gray-50 rounded">
+                                            <span class="font-medium text-blue-800">Discussions</span>
+                                            <p class="text-sm text-gray-600">Open-ended topics for community input</p>
+                                        </div>
+                                        <div class="p-3 bg-gray-50 rounded">
+                                            <span class="font-medium text-blue-800">Resources</span>
+                                            <p class="text-sm text-gray-600">Shared materials, tools, and references</p>
+                                        </div>
+                                        <div class="p-3 bg-gray-50 rounded">
+                                            <span class="font-medium text-blue-800">Announcements</span>
+                                            <p class="text-sm text-gray-600">Official updates and community news</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium mb-3 text-blue-600">Formatting Guidelines</h4>
+                                    <ul class="space-y-2">
+                                        <li class="checklist-item">Clear, specific titles</li>
+                                        <li class="checklist-item">Break text into readable paragraphs</li>
+                                        <li class="checklist-item">Use headings to organize longer posts</li>
+                                        <li class="checklist-item">Include code in appropriate code blocks</li>
+                                        <li class="checklist-item">Add relevant tags for categorization</li>
+                                        <li class="checklist-item">Include images when helpful (with alt text)</li>
+                                        <li class="checklist-item">Link to related content when appropriate</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="workflows" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">3. Content Creation Workflows</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Staff Content Workflow</h3>
+                        <div class="relative">
+                            <div class="absolute left-4 inset-y-0 w-0.5 bg-gray-200"></div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">1</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Planning & Concept</h4>
+                                    <p class="text-gray-600 mb-2">Identify content needs, target audience, and key objectives. Define scope and format.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Concept Document</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Content Brief</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">2</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Outline & Draft</h4>
+                                    <p class="text-gray-600 mb-2">Create structured outline and develop initial content draft following templates and style guidelines.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Content Outline</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">First Draft</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">3</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Internal Review</h4>
+                                    <p class="text-gray-600 mb-2">Subject matter expert reviews content for accuracy; editorial review for style and formatting.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Review Comments</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Revision Requests</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">4</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Revision & Finalization</h4>
+                                    <p class="text-gray-600 mb-2">Incorporate feedback, refine content, prepare accompanying media, and finalize for publication.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Final Draft</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Media Assets</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">5</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Publication & Promotion</h4>
+                                    <p class="text-gray-600 mb-2">Schedule and publish content, create promotional materials, and share across relevant channels.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Publication Checklist</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Promotion Plan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold">6</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Monitoring & Iteration</h4>
+                                    <p class="text-gray-600 mb-2">Track performance metrics, gather user feedback, and update content as needed to improve quality and relevance.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Performance Report</span>
+                                        <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700">Iteration Plan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Community Content Workflow</h3>
+                        <div class="relative">
+                            <div class="absolute left-4 inset-y-0 w-0.5 bg-gray-200"></div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 font-bold">1</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Submission</h4>
+                                    <p class="text-gray-600 mb-2">Community member creates content using appropriate template and submits for review.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 font-bold">2</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Initial Screening</h4>
+                                    <p class="text-gray-600 mb-2">Automated checks for completeness and guideline compliance, followed by moderator review.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 font-bold">3</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Review & Feedback</h4>
+                                    <p class="text-gray-600 mb-2">Moderators review content for quality, accuracy, and alignment with community guidelines.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 font-bold">4</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Revision (if needed)</h4>
+                                    <p class="text-gray-600 mb-2">Creator receives feedback and makes necessary revisions to meet guidelines.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 font-bold">5</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Publication</h4>
+                                    <p class="text-gray-600 mb-2">Approved content is published and promoted as appropriate.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Approval Process</h3>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="py-3 px-4 text-left font-semibold">Content Type</th>
+                                        <th class="py-3 px-4 text-left font-semibold">Approvers</th>
+                                        <th class="py-3 px-4 text-left font-semibold">SLA</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Official Tutorials & Courses</td>
+                                        <td class="py-3 px-4">Subject Matter Expert + Content Manager</td>
+                                        <td class="py-3 px-4">3-5 business days</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Community Projects</td>
+                                        <td class="py-3 px-4">Community Moderator</td>
+                                        <td class="py-3 px-4">1-2 business days</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Stream-Labz Videos</td>
+                                        <td class="py-3 px-4">Video Producer + Content Manager</td>
+                                        <td class="py-3 px-4">2-3 business days</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4">Forum Posts</td>
+                                        <td class="py-3 px-4">Automated + Community Moderator (if flagged)</td>
+                                        <td class="py-3 px-4">Immediate to 24 hours</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="templates" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">4. Documentation Templates</h2>
+                    
+                    <p class="mb-6">Standardized templates ensure consistency across all content types while making it easier for creators to focus on substance rather than format.</p>
+                    
+                    <div class="card p-6 mb-6 bg-white border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Project Documentation Template</h3>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg mb-4">
+                            <h4 class="text-lg font-medium mb-3 text-blue-600">Template Structure</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Project Title</h5>
+                                    <p class="text-sm text-gray-600">Clear, descriptive title that indicates what the project is</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Overview</h5>
+                                    <p class="text-sm text-gray-600">Brief description (2-3 sentences) explaining what the project does and why it's interesting</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Materials & Components</h5>
+                                    <p class="text-sm text-gray-600">Itemized list with quantities and optional links to sources</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Tools Required</h5>
+                                    <p class="text-sm text-gray-600">List of tools needed to complete the project</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Step-by-Step Instructions</h5>
+                                    <p class="text-sm text-gray-600">Numbered steps with clear descriptions and accompanying images</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Code/Schematics</h5>
+                                    <p class="text-sm text-gray-600">Any code, circuit diagrams, or design files with explanations</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Troubleshooting</h5>
+                                    <p class="text-sm text-gray-600">Common issues and their solutions</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Next Steps & Variations</h5>
+                                    <p class="text-sm text-gray-600">Ideas for extending or modifying the project</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">References & Credits</h5>
+                                    <p class="text-sm text-gray-600">Acknowledgments and sources of inspiration</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <a href="#" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Download Project Template</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 mb-6 bg-white border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Course Lesson Template</h3>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg mb-4">
+                            <h4 class="text-lg font-medium mb-3 text-blue-600">Template Structure</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Lesson Title</h5>
+                                    <p class="text-sm text-gray-600">Clear, descriptive title indicating the lesson content</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Learning Objectives</h5>
+                                    <p class="text-sm text-gray-600">3-5 specific, measurable outcomes students will achieve</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Prerequisites</h5>
+                                    <p class="text-sm text-gray-600">Knowledge or skills needed before starting this lesson</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Estimated Time</h5>
+                                    <p class="text-sm text-gray-600">How long the lesson should take to complete</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Materials Needed</h5>
+                                    <p class="text-sm text-gray-600">Any physical or digital resources required</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Key Concepts</h5>
+                                    <p class="text-sm text-gray-600">Definitions and explanations of important terminology</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Lesson Content</h5>
+                                    <p class="text-sm text-gray-600">The main instructional material, divided into logical sections</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Activities/Exercises</h5>
+                                    <p class="text-sm text-gray-600">Hands-on activities to reinforce learning</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Check for Understanding</h5>
+                                    <p class="text-sm text-gray-600">Quiz questions or exercises to validate comprehension</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <h5 class="font-medium text-gray-800">Additional Resources</h5>
+                                    <p class="text-sm text-gray-600">Optional materials for further learning</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <a href="#" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Download Course Template</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 bg-white border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Additional Templates</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                                <h4 class="font-medium mb-1 flex items-center">
+                                    <i class="fas fa-file-alt text-blue-500 mr-2"></i>
+                                    Video Script Template
+                                </h4>
+                                <p class="text-sm text-gray-600">Structure for creating consistent video content</p>
+                            </a>
+                            <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                                <h4 class="font-medium mb-1 flex items-center">
+                                    <i class="fas fa-file-alt text-blue-500 mr-2"></i>
+                                    Forum Post Template
+                                </h4>
+                                <p class="text-sm text-gray-600">Framework for well-structured community discussions</p>
+                            </a>
+                            <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                                <h4 class="font-medium mb-1 flex items-center">
+                                    <i class="fas fa-file-alt text-blue-500 mr-2"></i>
+                                    Tutorial Article Template
+                                </h4>
+                                <p class="text-sm text-gray-600">Format for step-by-step instructional content</p>
+                            </a>
+                            <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                                <h4 class="font-medium mb-1 flex items-center">
+                                    <i class="fas fa-file-alt text-blue-500 mr-2"></i>
+                                    Case Study Template
+                                </h4>
+                                <p class="text-sm text-gray-600">Structure for in-depth project analysis and outcomes</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="seo" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">5. SEO Best Practices</h2>
+                    
+                    <p class="mb-6">Search Engine Optimization (SEO) helps make STEAM-Labz content discoverable to those seeking STEAM education resources.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Keyword Strategy</h3>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium mb-2 text-gray-800">Primary Keywords</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Main search terms that define the content's core topic.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">STEAM education</span>
+                                        <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Arduino tutorial</span>
+                                        <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">3D printing guide</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-medium mb-2 text-gray-800">Secondary Keywords</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Related terms that add context and capture additional search intent.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-green-50 text-green-700 rounded-full text-xs">beginner friendly</span>
+                                        <span class="px-2 py-1 bg-green-50 text-green-700 rounded-full text-xs">step-by-step</span>
+                                        <span class="px-2 py-1 bg-green-50 text-green-700 rounded-full text-xs">hands-on learning</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-medium mb-2 text-gray-800">Long-Tail Keywords</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Specific phrases that target niche search queries.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-purple-50 text-purple-700 rounded-full text-xs">how to build Arduino weather station</span>
+                                        <span class="px-2 py-1 bg-purple-50 text-purple-700 rounded-full text-xs">3D printed robotics parts for beginners</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">On-Page Optimization</h3>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-blue-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Title Tags</h4>
+                                        <p class="text-sm text-gray-600">Include primary keyword near the beginning. Keep under 60 characters.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-blue-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Meta Descriptions</h4>
+                                        <p class="text-sm text-gray-600">Compelling summary with keywords. Keep under 160 characters.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-blue-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">URL Structure</h4>
+                                        <p class="text-sm text-gray-600">Short, descriptive URLs with keywords. Use hyphens between words.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-blue-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Heading Tags</h4>
+                                        <p class="text-sm text-gray-600">Use H1 for main title, H2 for sections, H3 for subsections. Include keywords naturally.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-blue-600 text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Image Optimization</h4>
+                                        <p class="text-sm text-gray-600">Descriptive file names, alt text with keywords, and compressed file sizes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 bg-white border border-gray-200 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Content Optimization Checklist</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-file-alt text-blue-500 mr-2"></i>
+                                    Content Structure
+                                </h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="checklist-item">Content is well-organized with clear headings</li>
+                                    <li class="checklist-item">Introduction clearly states what readers will learn</li>
+                                    <li class="checklist-item">Paragraphs are short and focused (3-4 sentences)</li>
+                                    <li class="checklist-item">Uses bulleted or numbered lists where appropriate</li>
+                                    <li class="checklist-item">Includes a helpful conclusion or summary</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-search text-blue-500 mr-2"></i>
+                                    Keyword Usage
+                                </h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="checklist-item">Primary keyword appears in title, first paragraph, and headings</li>
+                                    <li class="checklist-item">Secondary keywords distributed naturally throughout</li>
+                                    <li class="checklist-item">Keywords used in image alt text where relevant</li>
+                                    <li class="checklist-item">Appropriate keyword density (2-3% of total content)</li>
+                                    <li class="checklist-item">Avoids keyword stuffing that feels unnatural</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-link text-blue-500 mr-2"></i>
+                                    Internal & External Linking
+                                </h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="checklist-item">Links to relevant internal content (3-5 links recommended)</li>
+                                    <li class="checklist-item">Uses descriptive anchor text for links</li>
+                                    <li class="checklist-item">Includes authoritative external sources where appropriate</li>
+                                    <li class="checklist-item">Links open in appropriate windows (external in new tabs)</li>
+                                    <li class="checklist-item">All links are functional and relevant</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-mobile-alt text-blue-500 mr-2"></i>
+                                    User Experience
+                                </h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="checklist-item">Content is mobile-friendly with responsive design</li>
+                                    <li class="checklist-item">Page load time is optimized (images compressed)</li>
+                                    <li class="checklist-item">Content is easily scannable with visual breaks</li>
+                                    <li class="checklist-item">Interactive elements are intuitive and accessible</li>
+                                    <li class="checklist-item">Includes clear calls-to-action where appropriate</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">SEO Examples by Content Type</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-medium mb-2 text-blue-600">Project Documentation</h4>
+                                <div class="bg-white p-4 rounded border border-gray-200">
+                                    <p class="font-medium text-gray-800 mb-1">Original Title:</p>
+                                    <p class="text-gray-600 mb-3">My LED Project</p>
+                                    
+                                    <p class="font-medium text-gray-800 mb-1">SEO-Optimized Title:</p>
+                                    <p class="text-gray-600 mb-3">DIY Arduino LED Matrix: Interactive Light Display Project for Beginners</p>
+                                    
+                                    <p class="font-medium text-gray-800 mb-1">Meta Description:</p>
+                                    <p class="text-gray-600">Learn how to build your own interactive LED matrix display using Arduino. This step-by-step tutorial includes circuit diagrams, code examples, and troubleshooting tips for makers of all levels.</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium mb-2 text-blue-600">Educational Course</h4>
+                                <div class="bg-white p-4 rounded border border-gray-200">
+                                    <p class="font-medium text-gray-800 mb-1">Original Title:</p>
+                                    <p class="text-gray-600 mb-3">Introduction to 3D Printing</p>
+                                    
+                                    <p class="font-medium text-gray-800 mb-1">SEO-Optimized Title:</p>
+                                    <p class="text-gray-600 mb-3">Complete 3D Printing for Beginners: From Design to Finished Models (2025 Guide)</p>
+                                    
+                                    <p class="font-medium text-gray-800 mb-1">Meta Description:</p>
+                                    <p class="text-gray-600">Master 3D printing from scratch with our comprehensive beginner's course. Learn modeling techniques, slicer settings, printer maintenance, and create your first 3D printed projects in just 5 lessons.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="calendar" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">6. Content Calendar</h2>
+                    
+                    <p class="mb-6">A strategic content calendar ensures consistent publishing while aligning with educational needs, community interests, and organizational goals.</p>
+                    
+                    <div class="card p-6 bg-white border border-gray-200 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Content Calendar Structure</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800">Strategic Planning Elements</h4>
+                                <ul class="space-y-2">
+                                    <li class="checklist-item">Annual content themes and focus areas</li>
+                                    <li class="checklist-item">Quarterly content goals and metrics</li>
+                                    <li class="checklist-item">Monthly content distribution across platforms</li>
+                                    <li class="checklist-item">Weekly publishing schedule and responsibilities</li>
+                                    <li class="checklist-item">Content gaps and opportunities assessment</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800">Calendar Components</h4>
+                                <ul class="space-y-2">
+                                    <li class="checklist-item">Content type and format</li>
+                                    <li class="checklist-item">Target audience and goals</li>
+                                    <li class="checklist-item">Topic and keyword focus</li>
+                                    <li class="checklist-item">Creator and reviewer assignments</li>
+                                    <li class="checklist-item">Production timeline with milestones</li>
+                                    <li class="checklist-item">Publication date and promotion plan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 bg-white border border-gray-200 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Recommended Publishing Cadence</h3>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="py-3 px-4 text-left font-semibold">Content Type</th>
+                                        <th class="py-3 px-4 text-left font-semibold">Frequency</th>
+                                        <th class="py-3 px-4 text-left font-semibold">Best Day/Time</th>
+                                        <th class="py-3 px-4 text-left font-semibold">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Projects</td>
+                                        <td class="py-3 px-4">2-3 per week</td>
+                                        <td class="py-3 px-4">Tuesday & Thursday, 10 AM ET</td>
+                                        <td class="py-3 px-4">Mix of difficulty levels and STEAM disciplines</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Course Modules</td>
+                                        <td class="py-3 px-4">1 per week</td>
+                                        <td class="py-3 px-4">Monday, 9 AM ET</td>
+                                        <td class="py-3 px-4">Release consistently to build learning momentum</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Tutorial Videos</td>
+                                        <td class="py-3 px-4">2 per week</td>
+                                        <td class="py-3 px-4">Wednesday & Friday, 3 PM ET</td>
+                                        <td class="py-3 px-4">Coincide with related project releases when possible</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Livestreams</td>
+                                        <td class="py-3 px-4">1-2 per month</td>
+                                        <td class="py-3 px-4">Saturday, 1 PM ET</td>
+                                        <td class="py-3 px-4">Announce at least 1 week in advance</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4">Community Spotlights</td>
+                                        <td class="py-3 px-4">1 per week</td>
+                                        <td class="py-3 px-4">Friday, 11 AM ET</td>
+                                        <td class="py-3 px-4">Feature outstanding community contributions</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Seasonal Themes</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="p-3 bg-blue-50 rounded-lg">
+                                    <h4 class="font-medium mb-1 text-blue-800">Winter (January-March)</h4>
+                                    <p class="text-sm mb-2">Focus: Coding & Programming Fundamentals</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-white text-blue-700 rounded-full text-xs">Python basics</span>
+                                        <span class="px-2 py-1 bg-white text-blue-700 rounded-full text-xs">Arduino programming</span>
+                                        <span class="px-2 py-1 bg-white text-blue-700 rounded-full text-xs">Game development</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-3 bg-green-50 rounded-lg">
+                                    <h4 class="font-medium mb-1 text-green-800">Spring (April-June)</h4>
+                                    <p class="text-sm mb-2">Focus: Environmental & Outdoor Projects</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-white text-green-700 rounded-full text-xs">Weather stations</span>
+                                        <span class="px-2 py-1 bg-white text-green-700 rounded-full text-xs">Gardening tech</span>
+                                        <span class="px-2 py-1 bg-white text-green-700 rounded-full text-xs">Renewable energy</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-3 bg-yellow-50 rounded-lg">
+                                    <h4 class="font-medium mb-1 text-yellow-800">Summer (July-September)</h4>
+                                    <p class="text-sm mb-2">Focus: Robotics & Physical Computing</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-white text-yellow-700 rounded-full text-xs">Drone projects</span>
+                                        <span class="px-2 py-1 bg-white text-yellow-700 rounded-full text-xs">RC vehicles</span>
+                                        <span class="px-2 py-1 bg-white text-yellow-700 rounded-full text-xs">Motion sensors</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-3 bg-red-50 rounded-lg">
+                                    <h4 class="font-medium mb-1 text-red-800">Fall (October-December)</h4>
+                                    <p class="text-sm mb-2">Focus: Creative Arts & Design</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-white text-red-700 rounded-full text-xs">Digital art</span>
+                                        <span class="px-2 py-1 bg-white text-red-700 rounded-full text-xs">3D printing</span>
+                                        <span class="px-2 py-1 bg-white text-red-700 rounded-full text-xs">Interactive installations</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Content Planning Tools</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-calendar-alt text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Editorial Calendar Template</h4>
+                                        <p class="text-sm text-gray-600 mb-1">Spreadsheet template for planning and tracking content across all platforms.</p>
+                                        <a href="#" class="text-sm text-blue-600 hover:underline">Download Template</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-tasks text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Content Production Tracker</h4>
+                                        <p class="text-sm text-gray-600 mb-1">Kanban-style board for tracking content from ideation to publication.</p>
+                                        <a href="#" class="text-sm text-blue-600 hover:underline">Access Tracker</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-chart-line text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Content Performance Dashboard</h4>
+                                        <p class="text-sm text-gray-600 mb-1">Analytics dashboard for monitoring content engagement and impact.</p>
+                                        <a href="#" class="text-sm text-blue-600 hover:underline">View Dashboard</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-lightbulb text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Content Idea Bank</h4>
+                                        <p class="text-sm text-gray-600 mb-1">Collaborative space for collecting and developing content ideas.</p>
+                                        <a href="#" class="text-sm text-blue-600 hover:underline">Access Idea Bank</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="text-lg font-semibold mb-3 text-blue-700">Calendar Management Best Practices</h3>
+                        
+                        <ul class="space-y-2">
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                <span>Schedule planning sessions quarterly to align content with strategic goals</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                <span>Build in buffer time for unexpected delays or opportunities</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                <span>Balance content types to serve different learning styles and interests</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                <span>Coordinate content across platforms to create integrated learning journeys</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                                <span>Review and adjust calendar based on performance data and community feedback</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="community" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">7. Community Contribution Guidelines</h2>
+                    
+                    <p class="mb-6">Community contributions are the heart of STEAM-Labz. These guidelines help ensure quality, consistency, and inclusivity while empowering community members to share their knowledge and creativity.</p>
+                    
+                    <div class="card p-6 bg-white border border-gray-200 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Contribution Opportunities</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-tools text-blue-500 mr-2"></i>
+                                    Projects & Tutorials
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">Share your builds, experiments, and how-to guides with the community.</p>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Hardware projects</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Software development</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>3D designs and prints</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Circuit designs</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-chalkboard-teacher text-blue-500 mr-2"></i>
+                                    Educational Resources
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">Develop learning materials for STEAM topics in your area of expertise.</p>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Course modules</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Curriculum materials</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Reference guides</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Educational games</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-video text-blue-500 mr-2"></i>
+                                    Video Content
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">Create visual demonstrations, tutorials, and explanations for Stream-Labz.</p>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Tutorial videos</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Project showcases</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Educational explainers</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Live workshops</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-medium mb-3 text-gray-800 flex items-center">
+                                    <i class="fas fa-code text-blue-500 mr-2"></i>
+                                    Code & Software
+                                </h4>
+                                <p class="text-sm text-gray-600 mb-3">Contribute to open-source projects, libraries, and tools for the community.</p>
+                                <ul class="space-y-1 text-sm">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Libraries and frameworks</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Platform improvements</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Educational applications</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-angle-right text-blue-500 mt-1"></i>
+                                        <span>Bug fixes and optimizations</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <div class="text-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-check text-green-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800">Content Standards</h3>
+                            </div>
+                            
+                            <ul class="space-y-2 text-sm">
+                                <li class="checklist-item">Original or properly attributed</li>
+                                <li class="checklist-item">Accurate and fact-checked</li>
+                                <li class="checklist-item">Clear and comprehensible</li>
+                                <li class="checklist-item">Well-organized with logical flow</li>
+                                <li class="checklist-item">Appropriate for target audience</li>
+                                <li class="checklist-item">Respectful and inclusive language</li>
+                                <li class="checklist-item">Properly formatted and error-free</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <div class="text-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-thumbs-up text-blue-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800">Best Practices</h3>
+                            </div>
+                            
+                            <ul class="space-y-2 text-sm">
+                                <li class="checklist-item">Follow relevant templates</li>
+                                <li class="checklist-item">Include clear step-by-step instructions</li>
+                                <li class="checklist-item">Add helpful images or diagrams</li>
+                                <li class="checklist-item">Provide context and background</li>
+                                <li class="checklist-item">Document materials and prerequisites</li>
+                                <li class="checklist-item">Explain why, not just how</li>
+                                <li class="checklist-item">Address common challenges</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <div class="text-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-times text-red-600 text-xl"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800">Content Restrictions</h3>
+                            </div>
+                            
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-ban text-red-500 mt-1"></i>
+                                    <span>Plagiarized content</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-ban text-red-500 mt-1"></i>
+                                    <span>Dangerous or illegal activities</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-ban text-red-500 mt-1"></i>
+                                    <span>Discriminatory or offensive content</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-ban text-red-500 mt-1"></i>
+                                    <span>Promotional or purely commercial material</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-ban text-red-500 mt-1"></i>
+                                    <span>Misinformation or pseudoscience</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-ban text-red-500 mt-1"></i>
+                                    <span>Content violating intellectual property rights</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-ban text-red-500 mt-1"></i>
+                                    <span>Private or confidential information</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 bg-white border border-gray-200 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Contribution Process</h3>
+                        
+                        <div class="relative">
+                            <div class="absolute left-4 top-0 h-full w-0.5 bg-gray-200"></div>
+                            
+                            <div class="relative flex mb-8">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center z-10 mr-4">1</div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-2">Sign Up as a Contributor</h4>
+                                    <p class="text-gray-600 mb-3">Complete your profile with your areas of expertise and interests.</p>
+                                    <a href="#" class="text-blue-600 hover:underline text-sm">Create Contributor Account →</a>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex mb-8">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center z-10 mr-4">2</div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-2">Review Guidelines & Templates</h4>
+                                    <p class="text-gray-600 mb-3">Familiarize yourself with the relevant standards and templates for your contribution type.</p>
+                                    <a href="#" class="text-blue-600 hover:underline text-sm">Browse Templates →</a>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex mb-8">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center z-10 mr-4">3</div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-2">Create Your Content</h4>
+                                    <p class="text-gray-600 mb-3">Develop your contribution following the appropriate template and guidelines.</p>
+                                    <div class="flex space-x-3">
+                                        <a href="#" class="text-blue-600 hover:underline text-sm">Project Submission →</a>
+                                        <a href="#" class="text-blue-600 hover:underline text-sm">Course Submission →</a>
+                                        <a href="#" class="text-blue-600 hover:underline text-sm">Video Submission →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex mb-8">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center z-10 mr-4">4</div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-2">Submit for Review</h4>
+                                    <p class="text-gray-600 mb-3">Submit your completed content for review by STEAM-Labz moderators.</p>
+                                    <div class="p-3 bg-blue-50 rounded-lg">
+                                        <p class="text-sm text-blue-800">Review typically takes 1-3 days depending on content type and complexity.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center z-10 mr-4">5</div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-2">Revise and Publish</h4>
+                                    <p class="text-gray-600 mb-3">Address any feedback from reviewers, then your content will be published on the platform.</p>
+                                    <div class="p-3 bg-green-50 rounded-lg">
+                                        <p class="text-sm text-green-800">Once published, you'll receive credit as the creator and can track engagement metrics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-400">
+                        <h3 class="text-lg font-semibold mb-3 text-yellow-800">Intellectual Property & Licensing</h3>
+                        
+                        <p class="mb-4 text-gray-700">By contributing to STEAM-Labz, you agree to the following licensing terms:</p>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-copyright text-yellow-700 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Content Ownership</h4>
+                                    <p class="text-sm text-gray-600">You retain ownership of your original content, but grant STEAM-Labz a perpetual, worldwide, non-exclusive license to use, reproduce, modify, and distribute your contribution.</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-certificate text-yellow-700 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Open Source Licensing</h4>
+                                    <p class="text-sm text-gray-600">Code contributions are typically released under an open-source license (MIT, GPL, etc.) to promote sharing and reuse within the community.</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start space-x-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-user-shield text-yellow-700 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Attribution</h4>
+                                    <p class="text-sm text-gray-600">You will be credited as the creator of your content, and we encourage others to provide proper attribution when reusing or referencing your work.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="moderation" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">8. Content Moderation Policies</h2>
+                    
+                    <p class="mb-6">Effective moderation ensures that STEAM-Labz remains a safe, inclusive, and educational environment for all community members.</p>
+                    
+                    <div class="card p-6 bg-white border border-gray-200 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Moderation Principles</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                                    <i class="fas fa-balance-scale text-blue-600"></i>
+                                </div>
+                                <h4 class="font-medium mb-2 text-gray-800">Fairness & Consistency</h4>
+                                <p class="text-sm text-gray-600">Apply moderation policies equally to all users regardless of status or contribution history.</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                                    <i class="fas fa-hand-holding-heart text-blue-600"></i>
+                                </div>
+                                <h4 class="font-medium mb-2 text-gray-800">Respect & Inclusion</h4>
+                                <p class="text-sm text-gray-600">Ensure content respects diversity and creates a welcoming environment for learners of all backgrounds.</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                                    <i class="fas fa-shield-alt text-blue-600"></i>
+                                </div>
+                                <h4 class="font-medium mb-2 text-gray-800">Safety & Education</h4>
+                                <p class="text-sm text-gray-600">Prioritize user safety while preserving educational value and open discussion of ideas.</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                                    <i class="fas fa-comments text-blue-600"></i>
+                                </div>
+                                <h4 class="font-medium mb-2 text-gray-800">Constructive Feedback</h4>
+                                <p class="text-sm text-gray-600">Provide helpful guidance for content improvements rather than simple rejections.</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                                    <i class="fas fa-eye text-blue-600"></i>
+                                </div>
+                                <h4 class="font-medium mb-2 text-gray-800">Transparency</h4>
+                                <p class="text-sm text-gray-600">Maintain clear communication about moderation decisions and policy enforcement.</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                                    <i class="fas fa-sync-alt text-blue-600"></i>
+                                </div>
+                                <h4 class="font-medium mb-2 text-gray-800">Continuous Improvement</h4>
+                                <p class="text-sm text-gray-600">Regularly review and refine moderation practices based on community feedback and emerging needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Pre-publication Review</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Approval Criteria</h4>
+                                        <ul class="space-y-1 text-sm">
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Meets content quality standards</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Follows relevant templates</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Original or properly attributed</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Educational value clearly established</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Appropriate for target audience</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center">
+                                        <i class="fas fa-pencil-alt text-yellow-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Revision Requests</h4>
+                                        <ul class="space-y-1 text-sm">
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Minor formatting or structural issues</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Incomplete information</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Clarity or explanation improvements</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Additional media or examples needed</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                                        <i class="fas fa-times text-red-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Rejection Reasons</h4>
+                                        <ul class="space-y-1 text-sm">
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Plagiarized or copyright infringing</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Safety concerns or dangerous content</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Offensive or discriminatory material</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Purely commercial or promotional</span>
+                                            </li>
+                                            <li class="flex items-center space-x-2">
+                                                <i class="fas fa-circle text-xs text-gray-400"></i>
+                                                <span>Significantly incorrect information</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-5 bg-white border border-gray-200">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-700">Post-publication Moderation</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-flag text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Community Flagging</h4>
+                                        <p class="text-sm text-gray-600 mb-2">Community members can flag content for moderator review when they identify potential issues.</p>
+                                        <div class="p-2 bg-blue-50 rounded text-sm text-blue-800">
+                                            Flagged content is reviewed within 24 hours by a moderator.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-robot text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Automated Monitoring</h4>
+                                        <p class="text-sm text-gray-600 mb-2">Automated systems scan published content and comments for policy violations.</p>
+                                        <div class="flex space-x-2">
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Prohibited terms</span>
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Spam patterns</span>
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Unusual activity</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-users-cog text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Moderator Actions</h4>
+                                        <div class="space-y-1 text-sm mt-2">
+                                            <div class="p-2 bg-gray-50 rounded">
+                                                <span class="font-medium">Edit:</span> Correct minor issues while preserving content
+                                            </div>
+                                            <div class="p-2 bg-gray-50 rounded">
+                                                <span class="font-medium">Temporarily Hide:</span> Remove from public view pending author revisions
+                                            </div>
+                                            <div class="p-2 bg-gray-50 rounded">
+                                                <span class="font-medium">Permanently Remove:</span> Delete content that violates policies
+                                            </div>
+                                            <div class="p-2 bg-gray-50 rounded">
+                                                <span class="font-medium">Add Disclaimer:</span> Attach notices for partial issues
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 bg-white border border-gray-200 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Community Guidelines Enforcement</h3>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="py-3 px-4 text-left font-semibold">Violation Type</th>
+                                        <th class="py-3 px-4 text-left font-semibold">First Occurrence</th>
+                                        <th class="py-3 px-4 text-left font-semibold">Second Occurrence</th>
+                                        <th class="py-3 px-4 text-left font-semibold">Third Occurrence</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Minor Formatting Issues</td>
+                                        <td class="py-3 px-4">Friendly correction with explanation</td>
+                                        <td class="py-3 px-4">Revision request with template reference</td>
+                                        <td class="py-3 px-4">Content editing by moderator</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Inaccurate Information</td>
+                                        <td class="py-3 px-4">Correction request with sources</td>
+                                        <td class="py-3 px-4">Temporary hide until corrected</td>
+                                        <td class="py-3 px-4">Content removal if uncorrected</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Inappropriate Language</td>
+                                        <td class="py-3 px-4">Edit with notification to author</td>
+                                        <td class="py-3 px-4">Temporary access restriction (24h)</td>
+                                        <td class="py-3 px-4">Extended restriction (1 week)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-3 px-4">Copyright Violation</td>
+                                        <td class="py-3 px-4">Content removal and warning</td>
+                                        <td class="py-3 px-4">1-week contribution restriction</td>
+                                        <td class="py-3 px-4">Account review and possible suspension</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4">Harassment/Abuse</td>
+                                        <td class="py-3 px-4">Content removal and warning</td>
+                                        <td class="py-3 px-4">Temporary account suspension (1-2 weeks)</td>
+                                        <td class="py-3 px-4">Permanent account termination</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">Appeals Process</h3>
+                        
+                        <p class="mb-4 text-gray-700">If you believe a moderation decision was made in error, you can appeal through the following process:</p>
+                        
+                        <div class="relative">
+                            <div class="absolute left-4 inset-y-0 w-0.5 bg-gray-200"></div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 font-bold">1</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Review the Decision</h4>
+                                    <p class="text-gray-600">Carefully read the moderation notice and cited policy violations.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 font-bold">2</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Submit Appeal</h4>
+                                    <p class="text-gray-600">Complete the appeals form with a clear explanation of why you believe the decision should be reconsidered.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-start mb-6 pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 font-bold">3</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Senior Review</h4>
+                                    <p class="text-gray-600">A different moderator will review the appeal within 3 business days.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex pl-12">
+                                <div class="absolute left-0 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-600 font-bold">4</div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Final Decision</h4>
+                                    <p class="text-gray-600">You'll receive a detailed explanation of the appeal outcome, which will be final.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="media" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-800 section-title">9. Media Guidelines</h2>
+                    
+                    <p class="mb-6">High-quality images and videos enhance content by providing visual context, improving understanding, and making learning more engaging. These guidelines ensure consistent,
